@@ -1,0 +1,24 @@
+<section class="section-padding">
+  <div class="max-w-4xl mx-auto">
+    <div>
+      <h2 class="text-3xl md:text-5xl font-bold mb-2">
+        Certifi<span class="gradient-text">cations</span>
+      </h2>
+      <div class="w-16 h-1 bg-primary rounded-full mb-10"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      @for (cert of certs; track cert.title) {
+        <div class="glass-card p-6 flex items-start gap-4 hover:border-primary/30 transition-colors duration-300">
+          <div class="p-3 rounded-xl bg-primary/10 text-primary shrink-0">
+            <i class="bi bi-award" style="font-size: 24px;"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg mb-1">{{ cert.title }}</h3>
+            <p class="text-sm text-muted-foreground">{{ cert.issuer }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+/* 404 Not Found Page Styles */
+
+.not-found-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+.not-found-content {
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.not-found-title {
+  font-size: 8rem;
+  line-height: 1;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.not-found-heading {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.not-found-text {
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 2rem;
+}
+
+.not-found-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.not-found-button:hover {
+  opacity: 0.9;
+}

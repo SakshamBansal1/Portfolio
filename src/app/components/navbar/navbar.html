@@ -1,0 +1,56 @@
+<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  [ngClass]="scrolled ? 'glass-card shadow-lg' : 'bg-transparent'">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#" class="text-xl font-bold font-mono gradient-text">
+      {{ openBrace }}&lt;Saksham /&gt;{{ closeBrace }}
+    </a>
+
+    <div class="hidden md:flex items-center" style="gap: 2.5rem;">
+      @for (link of navLinks; track link.href) {
+        <a [href]="link.href"
+          class="nav-link text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
+          {{ link.label }}
+        </a>
+      }
+      <button (click)="toggleTheme()" class="p-2 rounded-lg hover:bg-secondary transition-colors"
+        aria-label="Toggle theme" style="margin-left: 0.5rem;">
+        @if (dark) {
+          <i class="bi bi-sun" style="font-size: 18px;"></i>
+        } @else {
+          <i class="bi bi-moon" style="font-size: 18px;"></i>
+        }
+      </button>
+    </div>
+
+    <div class="flex md:hidden items-center gap-3">
+      <button (click)="toggleTheme()" class="p-2 rounded-lg hover:bg-secondary transition-colors"
+        aria-label="Toggle theme">
+        @if (dark) {
+          <i class="bi bi-sun" style="font-size: 18px;"></i>
+        } @else {
+          <i class="bi bi-moon" style="font-size: 18px;"></i>
+        }
+      </button>
+      <button (click)="toggleMobile()" class="p-2" aria-label="Toggle menu">
+        @if (!mobileOpen) {
+          <i class="bi bi-list" style="font-size: 22px;"></i>
+        } @else {
+          <i class="bi bi-x" style="font-size: 22px;"></i>
+        }
+      </button>
+    </div>
+  </div>
+
+  @if (mobileOpen) {
+    <div class="md:hidden glass-card mx-4 mb-4 rounded-xl overflow-hidden">
+      <div class="flex flex-col p-4 gap-3">
+        @for (link of navLinks; track link.href) {
+          <a [href]="link.href" (click)="closeMobile()"
+            class="text-sm text-muted-foreground hover:text-primary transition-colors py-2">
+            {{ link.label }}
+          </a>
+        }
+      </div>
+    </div>
+  }
+</nav>

@@ -1,0 +1,45 @@
+<section id="about" class="section-padding">
+  <div class="max-w-5xl mx-auto">
+    <div>
+      <h2 class="text-3xl md:text-5xl font-bold mb-2">
+        About <span class="gradient-text">Me</span>
+      </h2>
+      <div class="w-16 h-1 bg-primary rounded-full mb-10"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <p class="text-muted-foreground leading-relaxed mb-6 text-lg">
+          Software Developer with experience building scalable web applications and dashboards using Angular, JavaScript, and modern full-stack technologies.
+        </p>
+        <p class="text-muted-foreground leading-relaxed mb-8">
+          Currently working on Angular dashboards and REST APIs at Vision Plus Security Control Ltd. Passionate about building efficient web applications and solving real-world problems using clean architecture and modern frameworks.
+        </p>
+
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center gap-3 text-sm">
+            <i class="bi bi-geo-alt text-primary shrink-0" style="font-size: 18px;"></i>
+            <span class="text-muted-foreground">Kurukshetra, Haryana, India</span>
+          </div>
+          <div class="flex items-center gap-3 text-sm">
+            <i class="bi bi-briefcase text-primary shrink-0" style="font-size: 18px;"></i>
+            <span class="text-muted-foreground">Software Developer at Vision Plus Security Control Ltd.</span>
+          </div>
+          <div class="flex items-center gap-3 text-sm">
+            <i class="bi bi-mortarboard text-primary shrink-0" style="font-size: 18px;"></i>
+            <span class="text-muted-foreground">B.E. Computer Science — Chitkara University (2021–2025)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        @for (stat of stats; track stat.label) {
+          <div class="glass-card p-6 text-center hover:border-primary/30 transition-colors duration-300">
+            <div class="text-3xl font-bold gradient-text mb-1">{{ stat.value }}</div>
+            <div class="text-xs text-muted-foreground uppercase tracking-wider">{{ stat.label }}</div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

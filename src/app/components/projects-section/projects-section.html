@@ -1,0 +1,74 @@
+<section id="projects" class="section-padding bg-secondary/30">
+  <div class="max-w-6xl mx-auto">
+    <div>
+      <h2 class="text-3xl md:text-5xl font-bold mb-2">
+        Featured <span class="gradient-text">Projects</span>
+      </h2>
+      <div class="w-16 h-1 bg-primary rounded-full mb-8"></div>
+    </div>
+
+    <!-- Filters -->
+    <div class="flex gap-3 mb-10">
+      @for (f of filters; track f) {
+        <button
+          (click)="setFilter(f)"
+          [ngClass]="{
+            'bg-primary text-primary-foreground': activeFilter === f,
+            'bg-secondary text-muted-foreground hover:text-foreground': activeFilter !== f
+          }"
+          class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200">
+          {{ f }}
+        </button>
+      }
+    </div>
+
+    <!-- Project grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      @for (project of filteredProjects; track project.title) {
+        <div class="glass-card p-6 group hover:border-primary/30 transition-all duration-300 flex flex-col">
+          <div class="flex items-center justify-between mb-4">
+            <i class="bi bi-folder text-primary" style="font-size: 28px;"></i>
+            <div class="flex items-center gap-3">
+              @if (project.github) {
+                <a
+                  [href]="project.github"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-muted-foreground hover:text-primary transition-colors">
+                  <i class="bi bi-github" style="font-size: 18px;"></i>
+                </a>
+              }
+              <a href="#" class="text-muted-foreground hover:text-primary transition-colors">
+                <i class="bi bi-box-arrow-up-right" style="font-size: 18px;"></i>
+              </a>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+            {{ project.title }}
+          </h3>
+          <p class="text-sm text-muted-foreground mb-4 leading-relaxed flex-1">
+            {{ project.description }}
+          </p>
+
+          <ul class="mb-4 space-y-1">
+            @for (h of project.highlights; track $index) {
+              <li class="text-xs text-muted-foreground flex items-start gap-1.5">
+                <span class="text-primary mt-0.5">▹</span>
+                {{ h }}
+              </li>
+            }
+          </ul>
+
+          <div class="flex flex-wrap gap-2 mt-auto">
+            @for (t of project.tech; track t) {
+              <span class="text-xs font-mono px-2 py-1 rounded-md bg-primary/10 text-primary">
+                {{ t }}
+              </span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

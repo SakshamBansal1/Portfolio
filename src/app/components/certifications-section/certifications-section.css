@@ -1,0 +1,39 @@
+/* Certifications Section Styles */
+
+/* Certification card */
+.cert-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Icon wrapper */
+.cert-icon-wrapper {
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  background-color: hsl(var(--primary) / 0.1);
+  color: hsl(var(--primary));
+  flex-shrink: 0;
+}
+
+/* Cert content */
+.cert-content {
+  flex: 1;
+}
+
+.cert-title {
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin-bottom: 0.25rem;
+}
+
+.cert-issuer {
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+}

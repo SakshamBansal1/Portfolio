@@ -1,0 +1,7 @@
+/* Home Page Styles */
+
+.home-container {
+  min-height: 100vh;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
